@@ -2,14 +2,14 @@
 #their product only if the product is equal to or lower than 1000.
 # Otherwise, return their sum.
 
-try:
-    n1 = int(input("numero1 = "))
-    n2 = int(input("numero2 = "))
-    if (n1 * n2 <= 1000):
-        print(f"produto: {n1*n2}")
-    else:
-        print(f"soma: {n1+n2}")
-except ValueError as e:
-    print("O valor que você digitou não é um número")
-except Exception as e:
-    print(f"Erro genérico: {type(e)}\n{e}")
+def product_sum():
+    try:
+        numero1 = int(input("numero1 = "))
+        numero2 = int(input("numero2 = "))
+    except ValueError as e:
+        print("Erro: Você não digitou um numero correctamente")
+    if numero1*numero2 <= 1_000: print(f"product: {numero1*numero2}")
+    else: print(f"soma: {numero1+numero2}")
+
+product_sum()
+input()
