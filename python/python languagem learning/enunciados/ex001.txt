@@ -1,3 +1,13 @@
-#Given two integer numbers, write a Python code to return
-#their product only if the product is equal to or lower than 1000.
-# Otherwise, return their sum.
+# URL da página a ser baixada
+$url = "https://pynative.com/python-input-and-output-exercise/"
+
+# Obter o nome da página a partir da URL
+$pageName = ($url -split "/")[-1]
+
+# Adicionar extensão .html ao nome do arquivo
+$fileName = "$pageName.html"
+
+# Baixar a página e salvar no diretório atual
+Invoke-WebRequest -Uri $url -OutFile $fileName
+
+Write-Host "Página salva como $fileName no diretório $PWD"
